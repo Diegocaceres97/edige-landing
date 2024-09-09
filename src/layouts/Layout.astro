@@ -1,41 +1,92 @@
 ---
 interface Props {
-	title: string;
+	title?: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Edige</title>
 	</head>
+	<header class="px-4 lg:px-6 h-14 flex items-center bg-background shadow">
+		<a class="flex items-center justify-center" href="#">
+		  <svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			class="h-6 w-6 text-primary"
+		  >
+			<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+		  </svg>
+		  <span class="ml-2 font-semibold text-lg">English Mastery</span>
+		</a>
+		<nav class="ml-auto flex gap-4 sm:gap-6">
+		  <a class="text-sm font-medium hover:underline underline-offset-4" href="#">
+			Contact
+		  </a>
+		  <a class="text-sm font-medium hover:underline underline-offset-4" href="#">
+			Testimonials
+		  </a>
+		  <a class="text-sm font-medium hover:underline underline-offset-4" href="#">
+			Pricing
+		  </a>
+		</nav>
+	  </header>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
+		:root {
+		--background:0 0% 100%;
+		--foreground:240 10% 3.9%;
+		--card:0 0% 100%;
+		--card-foreground:240 10% 3.9%;
+		--popover:0 0% 100%;
+		--popover-foreground:240 10% 3.9%;
+		--primary:240 5.9% 10%;
+		--primary-foreground:0 0% 98%;
+		--secondary:240 4.8% 95.9%;
+		--secondary-foreground:240 5.9% 10%;
+		--muted:240 4.8% 95.9%;
+		--muted-foreground:240 3.8% 45%;
+		--accent:240 4.8% 95.9%;
+		--accent-foreground:240 5.9% 10%;
+		--destructive:0 72% 51%;
+		--destructive-foreground:0 0% 98%;
+		--border:240 5.9% 90%;
+		--input:240 5.9% 90%;
+		 --ring:240 5.9% 10%;
+		 --chart-1:173 58% 39%;
+		 --chart-2:12 76% 61%;
+		 --chart-3:197 37% 24%;
+		 --chart-4:43 74% 66%;
+		 --chart-5:27 87% 67%;
+		 --radius:0.5rem;
+		 color: rgb(9, 9, 11);
+		}
+
+		html {
+			font-family: system-ui, sans-serif;
+		}
+
+		body { 
+			font-family: 'Inter', sans-serif; 
+			--font-sans-serif: 'Inter'; }
 	code {
 		font-family:
 			Menlo,
@@ -46,5 +97,5 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
-	}
+	}	
 </style>
