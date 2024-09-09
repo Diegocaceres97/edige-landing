@@ -7,16 +7,16 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="bg-white dark:bg-black">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Edige</title>
+		<title>{title ?? 'Edige'}</title>
 	</head>
-	<header class="px-4 lg:px-6 h-14 flex items-center bg-background shadow">
+	<header class="px-4 lg:px-6 h-14 flex items-center bg-background shadow dark:shadow-white text-black dark:text-white">
 		<a class="flex items-center justify-center" href="#">
 		  <svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,6 @@ const { title } = Astro.props;
 		 --chart-4:43 74% 66%;
 		 --chart-5:27 87% 67%;
 		 --radius:0.5rem;
-		 color: rgb(9, 9, 11);
 		}
 
 		html {
