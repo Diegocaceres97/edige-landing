@@ -2,46 +2,44 @@
 
 ---
 
-<section id="testimonials" class="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-muted text-black dark:text-white">
-    <div class="container px-4 md:px-6">
-      <div class="flex flex-col items-center justify-center space-y-4 text-center">
-        <div class="space-y-2">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonios</h2>
-          <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Infórmate de cómo nuestros clientes aprenden y disfrutan del inglés con total libertad.
+<section id="testimonials" aria-labelledby="testimonials-section" class="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-muted text-black dark:text-white">
+  <div class="container px-4 md:px-6">
+    <div class="flex flex-col items-center justify-center space-y-4 text-center">
+      <div class="space-y-2">
+        <h2 id="testimonials-section" class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonios</h2>
+        <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          Infórmate de cómo nuestros clientes aprenden y disfrutan del inglés con total libertad.
+        </p>
+      </div>
+      <div class="grid w-full max-w-5xl gap-6 lg:grid-cols-2 testimonialsCard" aria-label="Testimonios de clientes" role="region">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-4" role="article" aria-labelledby="testimonial1" aria-describedby="testimonial1-description" data-v0-t="card">
+          <div class="flex items-start gap-4 testimonialsCard__contentHeader">
+            <p>🧑🏻‍🎓</p>
+            <div>
+              <h3 class="font-semibold" id="testimonial1">Diego Caceres</h3>
+              <p class="text-muted-foreground">Software Developer, BHD bank.</p>
+            </div>
+          </div>
+          <p id="testimonial1-description" class="text-muted-foreground">
+            "Me ha parecido increíble cómo esta nueva manera de aprender inglés me ha potencializado al 100%."
           </p>
         </div>
-        <div class="grid w-full max-w-5xl gap-6 lg:grid-cols-2 testimonialsCard">
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-4" data-v0-t="card">
-            <div class="flex items-start gap-4 testimonialsCard__contentHeader">
-              <!-- <svg class="dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: currentColor;transform: ;msFilter:;"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg> -->
-              <p>🧑🏻‍🎓</p>
-              <div>
-                <h3 class="font-semibold">Diego Caceres</h3>
-                <p class="text-muted-foreground">Software Developer, BHD bank.</p>
-              </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-4 testimonialsCard" role="article" aria-labelledby="testimonial2" aria-describedby="testimonial2-description" data-v0-t="card">
+          <div class="flex items-start gap-4 testimonialsCard__contentHeader">
+            <p>🧑🏾‍🎓</p>
+            <div>
+              <h3 class="font-semibold" id="testimonial2">Carlos Paternina</h3>
+              <p class="text-muted-foreground">Software Developer, Pragma.</p>
             </div>
-            <p class="text-muted-foreground">
-              "Me ha parecido increíble cómo esta nueva manera de aprender inglés me ha potencializado al 100%."
-            </p>
           </div>
-          <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-4 testimonialsCard" data-v0-t="card">
-            <div class="flex items-start gap-4 testimonialsCard__contentHeader">
-              <!-- <svg class="dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: currentColor;transform: ;msFilter:;"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg> -->
-              <p>🧑🏾‍🎓</p>
-              <div>
-                <h3 class="font-semibold">Carlos Paternina</h3>
-                <p class="text-muted-foreground">Software Developer, Pragma.</p>
-              </div>
-            </div>
-            <p class="text-muted-foreground">
-              "Gracias a sus clases personalizadas, finalmente me siento cómodo hablando inglés en el trabajo."
-            </p>
-          </div>
+          <p id="testimonial2-description" class="text-muted-foreground">
+            "Gracias a sus clases personalizadas, finalmente me siento cómodo hablando inglés en el trabajo."
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <style>
     .testimonialsCard {

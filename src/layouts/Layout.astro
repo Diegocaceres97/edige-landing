@@ -64,7 +64,7 @@ const { title } = Astro.props;
 		  ]
 		}
 		</script>
-	<header class="px-4 lg:px-6 h-14 flex items-center bg-background shadow dark:shadow-white text-black dark:text-white">
+	<header id="header-nav" class="px-4 lg:px-6 h-14 flex items-center bg-background shadow dark:shadow-white text-black dark:text-white">
 		<a class="flex items-center justify-center" href="https:www.ejemplo.com">
 		  <svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -82,8 +82,8 @@ const { title } = Astro.props;
 		  </svg>
 		  <span class="ml-2 font-semibold text-lg">Edige</span>
 		</a>
-		<nav class="ml-auto flex gap-4 sm:gap-6">
-		  <a class="text-sm font-medium hover:underline underline-offset-4" href="https:www.ejemplo.com">
+		<nav class="ml-auto flex gap-4 sm:gap-6" aria-labelledby="header-nav" aria-current="page">
+		  <a class="text-sm font-medium hover:underline underline-offset-4" href="https:www.ejemplo.com" >
 			Contacto
 		  </a>
 		  <a class="text-sm font-medium hover:underline underline-offset-4" href="https:www.ejemplo.com">
