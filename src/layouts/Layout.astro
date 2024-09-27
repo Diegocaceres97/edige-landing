@@ -17,51 +17,80 @@ const { title } = Astro.props;
 		<title>{title ?? 'Edige'}</title>
 	</head>
 	<script type="application/ld+json">
+
 		{
-		  "@context": "https://schema.org",
-		  "@type": "Product",
-		  "aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "3.5",
-			"reviewCount": "11"
-		  },
-		  "description": "0.7 cubic feet countertop microwave. Has six preset cooking categories and convenience features like Add-A-Minute and Child Lock.",
-		  "name": "Kenmore White 17\" Microwave",
-		  "image": "kenmore-microwave-17in.jpg",
-		  "offers": {
-			"@type": "Offer",
-			"availability": "https://schema.org/InStock",
-			"price": "55.00",
-			"priceCurrency": "USD"
-		  },
-		  "review": [
-			{
-			  "@type": "Review",
-			  "author": "Ellie",
-			  "datePublished": "2011-04-01",
-			  "reviewBody": "The lamp burned out and now I have to replace it.",
-			  "name": "Not a happy camper",
-			  "reviewRating": {
-				"@type": "Rating",
-				"bestRating": "5",
-				"ratingValue": "1",
-				"worstRating": "1"
-			  }
-			},
-			{
-			  "@type": "Review",
-			  "author": "Lucas",
-			  "datePublished": "2011-03-25",
-			  "reviewBody": "Great microwave for the price. It is small and fits in my apartment.",
-			  "name": "Value purchase",
-			  "reviewRating": {
-				"@type": "Rating",
-				"bestRating": "5",
-				"ratingValue": "4",
-				"worstRating": "1"
-			  }
-			}
-		  ]
+		"@context": "[https://schema.org](https://schema.org/)",
+		"@type": "Organization",
+		"name": "Edige",
+		"url": "[e](https://www.englishmasteryacademy.com/)dige.info",
+		"logo": "https://www.englishmasteryacademy.com/logo.png",
+		"description": "Academia especializada en la enseñanza del inglés para todos los niveles, desde principiante hasta avanzado de una manera diferente.",
+		"contactPoint": {
+		"@type": "ContactPoint",
+		"telephone": "+56-9-4852-7186",
+		"contactType": "Customer Service",
+		"areaServed": "CO",
+		"availableLanguage": ["Spanish", "English"]
+		},
+		"sameAs": [
+		"https://www.facebook.com/edige",
+		"https://www.instagram.com/edige"
+		],
+		"address": {	
+		"@type": "PostalAddress",
+		"streetAddress": "Calle 10 A",
+		"addressLocality": "Los patios",
+		"addressRegion": "Norte de santander",
+		"postalCode": "541010",
+		"addressCountry": "CO"
+		},
+		"founder": [
+		{
+		"@type": "Person",
+		"name": "Edson Bolaños",
+		"jobTitle": "Founder & Head Teacher & CEO"
+		},
+		{
+		"@type": "Person",
+		"name": "Diego Caceres",
+		"jobTitle": "Co-Founder & CTO"
+		}
+		],
+		"offerCatalog": {
+		"@type": "OfferCatalog",
+		"name": "English Courses",
+		"itemListElement": [
+		{
+		"@type": "Offer",
+		"itemOffered": {
+		"@type": "Course",
+		"name": "Curso de Inglés Básico",
+		"description": "Curso diseñado para principiantes que quieren aprender las bases del inglés y un poco más.",
+		"provider": {
+		"@type": "Organization",
+		"name": "Edige"
+		}
+		},
+		"price": "250000",
+		"priceCurrency": "COP",
+		"availability": "https://schema.org/InStock"
+		},
+		{
+		"@type": "Offer",
+		"itemOffered": {
+		"@type": "Course",
+		"name": "Curso de Inglés Intermedio",
+		"description": "Curso para estudiantes con conocimientos previos que buscan mejorar su fluidez.",
+		"provider": {
+		"@type": "Organization",
+		"name": "Edige"
+		}
+		},
+		"price": "350000",
+		"priceCurrency": "COP",
+		"availability": "https://schema.org/InStock"
+		}]
+		}
 		}
 		</script>
 	<header id="header-nav" class="px-4 lg:px-6 h-14 flex items-center bg-background shadow dark:shadow-white text-black dark:text-white">
