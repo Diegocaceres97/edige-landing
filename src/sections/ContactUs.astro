@@ -1,5 +1,5 @@
 ---
-
+import {FORM_ID} from 'astro:env/client';
 ---
 <section id="contact" aria-labelledby="form-section" class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white" >
     <div class="container px-4 md:px-6">
@@ -8,6 +8,7 @@
           <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" id="form-section" >¡Quiebra el molde!🤘🏻</h2>
           <p class="text-muted-foreground md:text-xl">
             Esta es la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!
+          {FORM_ID}
           </p>
           <div class="flex items-center gap-4">
             <button
@@ -36,7 +37,8 @@
           </div>
         </div>
         <div>
-          <form class="space-y-4" aria-labelledby="form-section">
+          <form class="space-y-4" aria-labelledby="form-section" method="post" id="contactForm" 
+          action="https://app.loops.so/api/newsletter-form/cm1l9hmtf024y3e3nxofqd84d">
             <div class="space-y-2">
               <label
                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -45,9 +47,10 @@
                 Nombre
               </label>
               <input
-                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                class="flex h-10 w-full text-black rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 id="name"
                 placeholder="John Doe"
+                name="name"
                 required
                 aria-required="true"
               />
@@ -60,9 +63,10 @@
                 Email
               </label>
               <input
-                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                class="flex h-10 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 type="email"
                 id="email"
+                name="email"
                 placeholder="example@email.com"
                required
                aria-required="true"
@@ -75,10 +79,12 @@
               >
                 Teléfono
               </label>
+              <input type="hidden" name="mailingLists" value="cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk">
               <input
-                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                class="flex h-10 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 type="tel"
                 id="phone"
+                name="phone"
                 placeholder="123-456-7890"
                 required
                 aria-required="true"
@@ -92,6 +98,36 @@
               Enviar formulario 🚀
             </button>
           </form>
+          <script>
+            const form = document.getElementById('contactForm');
+    form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+       /*  const data = {
+            name: event.name.value,
+            email: form?.email.value,
+            message: form?.message.value,
+        }; */
+
+       
+  const formData = new FormData(event.target as HTMLFormElement);
+  const formProps = Object.fromEntries(formData);
+  const { name , email, phone, mailingListIds } = formProps;
+  console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
+  const formBody = `name=${encodeURIComponent(String(name))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk')}`;
+
+  fetch(`https://app.loops.so/api/newsletter-form/cm1l9hmtf024y3e3nxofqd84d`, {
+    method: "POST",
+    body: formBody,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  }).catch((error) => {
+    console.error("Error submitting form:", error);
+  }).finally(() => {
+    console.log("Form submission successful.");
+      });});
+          </script>
         </div>
       </div>
     </div>
