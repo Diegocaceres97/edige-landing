@@ -102,12 +102,6 @@ import {FORM_ID} from 'astro:env/client';
     form?.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-       /*  const data = {
-            name: event.name.value,
-            email: form?.email.value,
-            message: form?.message.value,
-        }; */
-
        
   const formData = new FormData(event.target as HTMLFormElement);
   const formProps = Object.fromEntries(formData);
