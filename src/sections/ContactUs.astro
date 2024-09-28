@@ -37,7 +37,7 @@ import {FORM_ID} from 'astro:env/client';
         </div>
         <div>
           <form class="space-y-4" aria-labelledby="form-section" method="post" id="contactForm" 
-          action="https://app.loops.so/api/newsletter-form/cm1l9hmtf024y3e3nxofqd84d">
+          action=`https://app.loops.so/api/newsletter-form/${FORM_ID}`>
             <div class="space-y-2">
               <label
                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -98,33 +98,41 @@ import {FORM_ID} from 'astro:env/client';
             </button>
           </form>
           <script>
+            import {FORM_ID} from 'astro:env/client';
             const form = document.getElementById('contactForm');
     form?.addEventListener('submit', async (event) => {
         event.preventDefault();
-
-       /*  const data = {
-            name: event.name.value,
-            email: form?.email.value,
-            message: form?.message.value,
-        }; */
 
        
   const formData = new FormData(event.target as HTMLFormElement);
   const formProps = Object.fromEntries(formData);
   const { name , email, phone, mailingListIds } = formProps;
-  console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
+  //console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
   const formBody = `name=${encodeURIComponent(String(name))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk')}`;
 
-  fetch(`https://app.loops.so/api/newsletter-form/cm1l9hmtf024y3e3nxofqd84d`, {
+  fetch(`https://app.loops.so/api/newsletter-form/${FORM_ID}`, {
     method: "POST",
     body: formBody,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-  }).catch((error) => {
+  }).then((res) => [res.ok, res.json(), res])
+    .then(([ok, dataPromise, res]) => {
+      if (ok) {
+        // If response successful
+        // display success
+        
+      } else {
+        // If response unsuccessful
+        // display error message or response status
+        console.error(dataPromise);
+      }
+    }).
+  catch((error) => {
     console.error("Error submitting form:", error);
   }).finally(() => {
     console.log("Form submission successful.");
+    alert("¡Gracias por tu contacto! Te responderemos lo antes posible.");
       });});
           </script>
         </div>
