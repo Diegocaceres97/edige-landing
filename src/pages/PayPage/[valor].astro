@@ -1,6 +1,6 @@
 ---
 import Footer from '@/sections/Footer.astro';
-import {FORM_ID} from 'astro:env/client';
+
 
 export async function getStaticPaths() {
   return [
@@ -103,7 +103,7 @@ const { valor } = params;
 <Footer>
 </Footer>
 <script>
- import {FORM_ID} from 'astro:env/client';
+const FORM_ID = import.meta.env.PUBLIC_FORM_ID;
 
   console.log('por acaa')
 const form = document.getElementById('contactForm');
