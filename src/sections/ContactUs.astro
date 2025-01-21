@@ -95,7 +95,8 @@
             </button>
           </form>
           <script>
-            import {FORM_ID} from 'astro:env/client';
+            const PUBLIC_FORM_ID = import.meta.env.PUBLIC_FORM_ID;
+        
             const form = document.getElementById('contactForm');
     form?.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -107,7 +108,7 @@
   //console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
   const formBody = `name=${encodeURIComponent(String(name))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk')}`;
 
-  fetch(`https://app.loops.so/api/newsletter-form/${FORM_ID}`, {
+  fetch(`https://app.loops.so/api/newsletter-form/${PUBLIC_FORM_ID}`, {
     method: "POST",
     body: formBody,
     headers: {
