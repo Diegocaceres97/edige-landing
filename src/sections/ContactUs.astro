@@ -1,6 +1,3 @@
----
-import {FORM_ID} from 'astro:env/client';
----
 <section id="contact" aria-labelledby="form-section" class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white" >
     <div class="container px-4 md:px-6">
       <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
@@ -8,8 +5,8 @@ import {FORM_ID} from 'astro:env/client';
           <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" id="form-section" >¡Quiebra el molde!🤘🏻</h2>
           <p class="text-muted-foreground md:text-xl">
             Esta es la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!
-          prueba sqa
           </p>
+          <p class="text-muted-foreground md:text-xl contact__paragraph--promo" aria-label="clase gratis si llenas el formulario">Obtén una clase gratis llenando el formulario por <b>tiempo limitado.</b></p>
           <div class="flex items-center gap-4">
             <button
               class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
@@ -31,14 +28,13 @@ import {FORM_ID} from 'astro:env/client';
               </svg>
             </a>
               
-              <a href="https://wa.link/7ehjzt" aria-label="Contáctanos en WhatsApp" target="_blank">Contáctanos en WhatsApp</a>
+              <a href="https://wa.link/j5ttit" aria-label="Contáctanos en WhatsApp" target="_blank">Contáctanos en WhatsApp</a>
               
             </button>
           </div>
         </div>
         <div>
-          <form class="space-y-4" aria-labelledby="form-section" method="post" id="contactForm" 
-          action="https://app.loops.so/api/newsletter-form/cm1l9hmtf024y3e3nxofqd84d">
+          <form class="space-y-4" aria-labelledby="form-section" method="post" id="contactForm" >
             <div class="space-y-2">
               <label
                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -99,6 +95,7 @@ import {FORM_ID} from 'astro:env/client';
             </button>
           </form>
           <script>
+            import {FORM_ID} from 'astro:env/client';
             const form = document.getElementById('contactForm');
     form?.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -107,22 +104,46 @@ import {FORM_ID} from 'astro:env/client';
   const formData = new FormData(event.target as HTMLFormElement);
   const formProps = Object.fromEntries(formData);
   const { name , email, phone, mailingListIds } = formProps;
-  console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
+  //console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
   const formBody = `name=${encodeURIComponent(String(name))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk')}`;
 
-  fetch(`https://app.loops.so/api/newsletter-form/cm1l9hmtf024y3e3nxofqd84d`, {
+  fetch(`https://app.loops.so/api/newsletter-form/${FORM_ID}`, {
     method: "POST",
     body: formBody,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-  }).catch((error) => {
+  }).then((res) => [res.ok, res.json(), res])
+    .then(([ok, dataPromise, res]) => {
+      if (ok) {
+        // If response successful
+        // display success
+        
+      } else {
+        // If response unsuccessful
+        // display error message or response status
+        console.error(dataPromise);
+      }
+    }).
+  catch((error) => {
     console.error("Error submitting form:", error);
   }).finally(() => {
     console.log("Form submission successful.");
+    alert("¡Gracias por tu contacto! Te responderemos lo antes posible. Por favor revisa tu correo spam si no te aparece nuestro email.");
       });});
           </script>
         </div>
       </div>
     </div>
+    <style>
+    .contact__paragraph--promo{
+        color:red; 
+        animation: blink 1.5s infinite;    
+      }
+
+      @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+    </style>
   </section>
