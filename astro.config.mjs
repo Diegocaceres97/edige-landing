@@ -3,10 +3,13 @@ import { defineConfig, envField } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 
+import vercel from '@astrojs/vercel/serverless';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
   integrations: [tailwind()],
+
   experimental: {
     env: {
       schema: {
@@ -18,5 +21,7 @@ export default defineConfig({
       }
     },
     serverIslands: true,
-  }
+  },
+
+  adapter: vercel()
 });
