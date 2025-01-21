@@ -12,4 +12,6 @@ export default defineConfig({
 
   experimental: {
   },
+
+  adapter: vercel(),
 });
