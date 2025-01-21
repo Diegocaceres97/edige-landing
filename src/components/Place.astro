@@ -1,0 +1,15 @@
+---
+const countries = [
+  { name: "Colombia", code: "CO" },
+  { name: "United States", code: "US" },
+  { name: "France", code: "FR" },
+];
+const COLOMBIA = 'CO';
+
+const country = Astro.request.headers.get('X-Vercel-IP-Country') ?? 'CO';
+
+const storeCountry = country === COLOMBIA ? 'spain' : 'colombia';
+
+---
+
+<h1>COUNTRY: {country}</h1>

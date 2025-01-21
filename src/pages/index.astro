@@ -1,4 +1,5 @@
 ---
+import Place from '@/components/place.astro';
 import Layout from '../layouts/Layout.astro';
 import ContactUs from '@/sections/ContactUs.astro';
 import Footer from '@/sections/Footer.astro';
@@ -23,6 +24,7 @@ import Testimonials from '@/sections/Testimonials.astro';
 		  <a class="text-sm font-medium hover:underline underline-offset-4" href="#pricing" >
 			Precios
 		  </a>
+		  <Place server:defer />
 		</nav>
 	  </header>
 
