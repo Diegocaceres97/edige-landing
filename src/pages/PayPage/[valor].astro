@@ -1,0 +1,163 @@
+---
+import Footer from '@/sections/Footer.astro';
+
+
+export async function getStaticPaths() {
+  return [
+    { params: { valor: 'basic' } },
+    { params: { valor: 'pro' } },
+    { params: { valor: 'otro' } },
+  ];
+}
+
+const { params } = Astro;
+const { valor } = params; 
+---
+<html class="bg-white dark:bg-black">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/assets/logo_edige_1.svg" />
+    <title>Edige</title>
+  </head>
+<div class="w-full flex flex-col py-12 px-12 md:px-6 md:py-24 lg:py-32 text-black dark:text-white bg-white dark:bg-black form__container">
+    <div class="flex flex-col justify-center items-center">
+    <h1 class="text-5xl md:text-7xl font-bold text-center text-black dark:text-white">
+        Gracias por habernos elegido &#129309;
+    </h1>
+    <p class="text-red-600 md:text-4xl md:mt-4">
+        IMPORTANTE:
+    </p>
+    <p class="md:text-2xl md:mt-2 text-center text-black dark:text-white">Tendrás que llenar el siguiente formulario, después te redireccionaremos para proceder con tu pago.</p>
+    <div class="w-auto text-center border-2 border-slate-700 rounded-xl mt-4 py-2 px-1">
+      <h3>Plan elegido: <b>{valor === 'basic' ? '250.000' : valor === 'pro' ? '350.000' : 'por definirse personalmente'}</b> {valor !== 'otro' ? 'mil' : ''} 💵.</h3>
+    </div>
+    
+  </div>
+    <div class="mt-4">
+        <form class="space-y-4" aria-labelledby="form-section" method="post" id="contactForm" data-price={valor}>
+          <div class="space-y-4">
+            <label
+              class="text-sm font-medium md:text-2xl leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="name"
+            >
+              Nombre
+            </label>
+            <input
+              class="flex h-10 w-full md:h-14 text-black rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="name"
+              placeholder="John Doe"
+              name="name"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="space-y-4">
+            <label
+              class="text-sm md:text-2xl font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="flex h-10 md:h-14 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+             required
+             aria-required="true"
+            />
+          </div>
+          <div class="space-y-4">
+            <label
+              class="text-sm md:text-2xl font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="phone"
+            >
+              Telefono
+            </label>
+            <input type="hidden" name="mailingLists" value="cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk">
+            <input
+              class="flex h-10 text-black h-10 md:h-14 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="302xxxxxxx"
+              required
+              aria-required="true"
+            />
+          </div>
+          <button
+            class="inline-flex md:h-14 md:mt-24 items-center justify-center bg-black text-white dark:bg-white dark:text-black whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+            type="submit"
+            aria-label="Enviar formulario"
+          >
+            Proceder al pago
+          </button>
+        </form>
+        
+    </div>
+</div>
+
+<Footer>
+</Footer>
+<script>
+const FORM_ID = import.meta.env.PUBLIC_FORM_ID;
+
+  console.log('por acaa')
+const form = document.getElementById('contactForm');
+const price = form?.getAttribute('data-price'); // Aquí obtenemos el precio del atributo data-price
+form?.addEventListener('submit', async (event) => {
+event.preventDefault();
+console.log('entra por aca')
+
+const formData = new FormData(event.target as HTMLFormElement);
+const formProps = Object.fromEntries(formData);
+const { name , email, phone, mailingListIds } = formProps;
+//console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
+const formBody = `name=${encodeURIComponent(String(`ediger- ${name}`))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk')}`;
+
+fetch(`https://app.loops.so/api/newsletter-form/${FORM_ID}`, {
+method: "POST",
+body: formBody,
+headers: {
+"Content-Type": "application/x-www-form-urlencoded",
+},
+}).then((res) => [res.ok, res.json(), res])
+.then(([ok, dataPromise, res]) => {
+if (ok) {
+// If response successful
+// display success
+} else {
+// If response unsuccessful
+// display error message or response status
+console.error(dataPromise);
+}
+}).
+catch((error) => {
+console.error("Error submitting form:", error);
+alert("¡Ups, algo salió mal!, intenta mas tarde.");
+}).finally(() => {
+console.log("Form submission successful.");
+alert("¡Gracias por habernos elegido!, porfa revisa tu email (spam si es necesario)."); 
+if(price=="basic"){
+  window.location.href = "https://mpago.li/1FGaunH";
+}else if(price === "pro") {
+window.location.href = "https://mpago.li/1XE31Bj";
+}else {
+window.location.href = "https://wa.link/j5ttit";
+}
+});}); 
+</script>
+</html>
+<style>
+    html{
+        margin: 0;
+        padding: 0;
+    }
+    .form__container {
+        height: 100%;
+    }
+</style>
+

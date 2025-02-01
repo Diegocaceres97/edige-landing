@@ -1,0 +1,15 @@
+---
+const country = Astro.request.headers.get('X-Vercel-IP-Country') ?? 'Unknown';;
+
+function countryCodeToEmoji(countryCode: string): any {
+  return countryCode
+    .toUpperCase()
+    .split('')
+    .map((char:any) => String.fromCodePoint(127397 + char.charCodeAt()))
+    .join('');
+};
+
+const countryFlag = country !== 'Unknown' ? countryCodeToEmoji(country) : '🌍';
+---
+
+<h1>{countryFlag}</h1>
