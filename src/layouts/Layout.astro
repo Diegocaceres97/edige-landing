@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="bg-white dark:bg-black">
+<html lang="es" class="bg-white" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!" />
@@ -92,6 +92,7 @@ const { title } = Astro.props;
 		}]
 		}
 		}
+
 		</script>
 
 	<body>
@@ -99,6 +100,7 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 		:root {
 		--background:0 0% 100%;
 		--foreground:240 10% 3.9%;
