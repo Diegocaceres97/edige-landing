@@ -1,5 +1,5 @@
 ---
-const country = Astro.request.headers.get('X-Vercel-IP-Country') ?? 'Unknown';;
+const country = Astro.request.headers.get('X-Vercel-IP-Country') ?? 'Unknown';
 
 function countryCodeToEmoji(countryCode: string): any {
   return countryCode
@@ -13,3 +13,12 @@ const countryFlag = country !== 'Unknown' ? countryCodeToEmoji(country) : '🌍'
 ---
 
 <h1>{countryFlag}</h1>
+<p style="display: none;" id="country">{country}</p>
+
+<script>
+  if (typeof window !== 'undefined') {
+    const country = document.getElementById('country')?.textContent;
+    console.log(country);
+    localStorage.setItem("country", country!);
+  }
+</script>
