@@ -13,7 +13,8 @@ export async function getStaticPaths() {
 const { params } = Astro;
 const { valor } = params; 
 ---
-<html class="bg-white dark:bg-black">
+<html class="bg-white dark:bg-slate-800">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="description" content="la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!" />
@@ -105,12 +106,17 @@ const { valor } = params;
 <script>
 const FORM_ID = import.meta.env.PUBLIC_FORM_ID;
 
-  console.log('por acaa')
+const country = window.localStorage.getItem("country") ?? 'col';
+
+if(country !== "col") {
+  console.log("country is not col");
+  window.location.href = `https://edige.info`;
+}
+
 const form = document.getElementById('contactForm');
 const price = form?.getAttribute('data-price'); // Aquí obtenemos el precio del atributo data-price
 form?.addEventListener('submit', async (event) => {
 event.preventDefault();
-console.log('entra por aca')
 
 const formData = new FormData(event.target as HTMLFormElement);
 const formProps = Object.fromEntries(formData);
