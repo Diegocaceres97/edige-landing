@@ -18,7 +18,7 @@
           >
             <div class="space-y-2">
               <h3 class="text-2xl font-bold">Básica</h3>
-              <p class="text-4xl font-bold">
+              <p class="text-4xl font-bold basic-price">
                 $250.000<span class="text-2xl">/mo</span>
               </p>
             </div>
@@ -38,7 +38,7 @@
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
-                2 clases grupales de 60 minutos a la semana.
+                12 clases grupales al mes.
               </li>
               <li>
                 <svg
@@ -87,7 +87,7 @@
           >
             <div class="space-y-2">
               <h3 class="text-2xl font-bold">Pro</h3>
-              <p class="text-4xl font-bold">
+              <p class="text-4xl font-bold pro-price">
                 $350.000<span class="text-2xl">/mo</span>
               </p>
             </div>
@@ -107,7 +107,7 @@
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
-                2 clases personales de 60 minutos a la semana.
+                12 clases privadas al mes.
               </li>
               <li>
                 <svg
@@ -124,7 +124,7 @@
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
-                1 clase grupal de 60 minutos por semana.
+                Acceso directo a los profesores a cualquier hora.
               </li>
               <li>
                 <svg
@@ -141,7 +141,7 @@
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
-                Material didáctico personalizado.
+                Material didáctico premium.
               </li>
             </ul>
             <a href="/PayPage/pro" class="inline-flex bg-black text-white dark:bg-white dark:text-black items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
@@ -176,7 +176,7 @@
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
-                A convenir con la empresa el número de clases privadas y grupales.
+                A convenir con la empresa y/o persona.
               </li>
               <li>
                 <svg
@@ -210,7 +210,7 @@
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
-                Acceso directo a todo tipo de contenido.
+                Material didáctico personalizado.
               </li>
             </ul>
             <a href="/PayPage/otro" class="inline-flex bg-black text-white dark:bg-white dark:text-black items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
@@ -222,4 +222,22 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const country = window.localStorage.getItem("country") ?? 'col';
+      
+      // Update prices based on country
+      if (country !== 'CO') {
+        // For non-Colombian users, show USD prices
+        const basicPrice = document.querySelector('.basic-price');
+        const proPrice = document.querySelector('.pro-price');
+        
+        if (basicPrice) {
+          basicPrice.innerHTML = '$100USD<span class="text-2xl">/mo</span>';
+        }
+        if (proPrice) {
+          proPrice.innerHTML = '$140USD<span class="text-2xl">/mo</span>';
+        }
+      }
+    </script>
   </section>
