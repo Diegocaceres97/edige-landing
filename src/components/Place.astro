@@ -18,7 +18,6 @@ const countryFlag = country !== 'Unknown' ? countryCodeToEmoji(country) : '🌍'
 <script>
   if (typeof window !== 'undefined') {
     const country = document.getElementById('country')?.textContent;
-    console.log(country);
     localStorage.setItem("country", country!);
   }
 </script>
