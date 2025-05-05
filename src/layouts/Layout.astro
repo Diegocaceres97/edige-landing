@@ -11,6 +11,7 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://edige.info{import.meta.env.PROD ? Astro.url.pathname : ''}" />
     <meta
       name="description"
       content="la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!"
