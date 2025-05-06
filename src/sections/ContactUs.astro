@@ -1,150 +1,226 @@
-<section id="contact" aria-labelledby="form-section" class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white" >
-    <div class="container px-4 md:px-6">
-      <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
-        <div class="space-y-4">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" id="form-section" >¡Quiebra el molde!🤘🏻</h2>
-          <p class="text-muted-foreground md:text-xl">
-            Esta es la primera plataforma en la que el inglés se enseña a tu manera, ¡con total libertad!
-          </p>
-          <p class="text-muted-foreground md:text-xl contact__paragraph--promo" aria-label="clase gratis si llenas el formulario">Obtén una clase gratis llenando el formulario por <b>tiempo limitado.</b></p>
-          <div class="flex items-center gap-4">
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+<section
+  id="contact"
+  aria-labelledby="form-section"
+  class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white"
+>
+  <div class="container px-4 md:px-6">
+    <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
+      <div class="space-y-4">
+        <img
+          src="assets/teacher.svg"
+          alt='teacher"'
+          class="w-full max-w-56 block mx-auto"
+        />
+        <!--      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center" id="form-section" >¡Quiebra el molde!🤘🏻</h2> -->
+        <div title="¡Quiebra el molde! 🤘🏻" class="text-3xl font-bold  sm:text-4xl md:text-5xl  contact__title ml-8 md:ml-8 sm:ml-12 lg:ml-8" id="title">
+          ¡Quiebra el molde! 🤘🏻
+        </div>
+        <p class="text-muted-foreground md:text-xl">
+          Esta es la primera plataforma en la que el inglés se enseña a tu
+          manera, ¡con total libertad!
+        </p>
+        <!--      <p class="text-muted-foreground md:text-xl contact__paragraph--promo" aria-label="clase gratis si llenas el formulario">Obtén una clase gratis llenando el formulario por <b>tiempo limitado.</b></p> -->
+        <div class="flex items-center gap-4"></div>
+      </div>
+      <div class="pt-4">
+        <form
+          class="space-y-4"
+          aria-labelledby="form-section"
+          method="post"
+          id="contactForm"
+        >
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="name"
             >
-            <a href="https://wa.me/56948527186?text=Hola%2C%20ando%20interesado%20en%20ser%20un%20crack%20en%20inglés" aria-label="Contáctanos en WhatsApp" target="_blank" aria-label="WhatsApp contact link">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-5 w-5 mr-2"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-            </a>
-              
-              <a href="https://wa.me/56948527186?text=Hola%2C%20ando%20interesado%20en%20ser%20un%20crack%20en%20inglés" aria-label="Contáctanos en WhatsApp" target="_blank">Contáctanos en WhatsApp</a>
-              
-            </button>
+              Nombre
+            </label>
+            <input
+              class="flex h-10 w-full text-black rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="name"
+              placeholder="John Doe"
+              name="name"
+              required
+              aria-required="true"
+            />
           </div>
-        </div>
-        <div>
-          <form class="space-y-4" aria-labelledby="form-section" method="post" id="contactForm" >
-            <div class="space-y-2">
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for="name"
-              >
-                Nombre
-              </label>
-              <input
-                class="flex h-10 w-full text-black rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                id="name"
-                placeholder="John Doe"
-                name="name"
-                required
-                aria-required="true"
-              />
-            </div>
-            <div class="space-y-2">
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for="email"
-              >
-                Email
-              </label>
-              <input
-                class="flex h-10 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="example@email.com"
-               required
-               aria-required="true"
-              />
-            </div>
-            <div class="space-y-2">
-              <label
-                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for="phone"
-              >
-                Teléfono
-              </label>
-              <input type="hidden" name="mailingLists" value="cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk">
-              <input
-                class="flex h-10 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="123-456-7890"
-                required
-                aria-required="true"
-              />
-            </div>
-            <button
-              class="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-              type="submit"
-              aria-label="Enviar formulario"
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="email"
             >
-              Enviar formulario 🚀
-            </button>
-          </form>
-          <script>
-            const PUBLIC_FORM_ID = import.meta.env.PUBLIC_FORM_ID;
-        
-            const form = document.getElementById('contactForm');
-    form?.addEventListener('submit', async (event) => {
-        event.preventDefault();
+              Email
+            </label>
+            <input
+              class="flex h-10 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              for="phone"
+            >
+              Teléfono
+            </label>
+            <input
+              type="hidden"
+              name="mailingLists"
+              value="cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk"
+            />
+            <input
+              class="flex h-10 text-black w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="123-456-7890"
+              required
+              aria-required="true"
+            />
+          </div>
+          <button
+            class="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+            type="submit"
+            aria-label="Enviar formulario"
+          >
+            Enviar formulario 🚀
+          </button>
+        </form>
+        <script>
+          const PUBLIC_FORM_ID = import.meta.env.PUBLIC_FORM_ID;
 
-       
-  const formData = new FormData(event.target as HTMLFormElement);
-  const formProps = Object.fromEntries(formData);
-  const { name , email, phone, mailingListIds } = formProps;
-  //console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
-  const formBody = `name=${encodeURIComponent(String(name))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk')}`;
+          const form = document.getElementById("contactForm");
+          form?.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-  fetch(`https://app.loops.so/api/newsletter-form/${PUBLIC_FORM_ID}`, {
-    method: "POST",
-    body: formBody,
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-  }).then((res) => [res.ok, res.json(), res])
-    .then(([ok, dataPromise, res]) => {
-      if (ok) {
-        // If response successful
-        // display success
-        
-      } else {
-        // If response unsuccessful
-        // display error message or response status
-        console.error(dataPromise);
-      }
-    }).
-  catch((error) => {
-    console.error("Error submitting form:", error);
-  }).finally(() => {
-    console.log("Form submission successful.");
-    alert("¡Gracias por tu contacto! Te responderemos lo antes posible. Por favor revisa tu correo spam si no te aparece nuestro email.");
-      });});
-          </script>
-        </div>
+            const formData = new FormData(event.target as HTMLFormElement);
+            const formProps = Object.fromEntries(formData);
+            const { name, email, phone, mailingListIds } = formProps;
+            //console.log(encodeURIComponent('cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk'))
+            const formBody = `name=${encodeURIComponent(String(name))}&email=${encodeURIComponent(String(email))}&phone=${encodeURIComponent(String(phone))}&}&mailingLists=${encodeURIComponent("cly2xnjbn002z0mme68uog1wk, cly4xnjbn002x0mme28uog1wk")}`;
+
+            fetch(
+              `https://app.loops.so/api/newsletter-form/${PUBLIC_FORM_ID}`,
+              {
+                method: "POST",
+                body: formBody,
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+              }
+            )
+              .then((res) => [res.ok, res.json(), res])
+              .then(([ok, dataPromise, res]) => {
+                if (ok) {
+                  // If response successful
+                  // display success
+                } else {
+                  // If response unsuccessful
+                  // display error message or response status
+                  console.error(dataPromise);
+                }
+              })
+              .catch((error) => {
+                console.error("Error submitting form:", error);
+              })
+              .finally(() => {
+                console.log("Form submission successful.");
+                alert(
+                  "¡Gracias por tu contacto! Te responderemos lo antes posible. Por favor revisa tu correo spam si no te aparece nuestro email."
+                );
+              });
+          });
+        </script>
       </div>
     </div>
-    <style>
-    .contact__paragraph--promo{
-        color:red; 
-        animation: blink 1.5s infinite;    
-      }
+  </div>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
 
-      @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-    </style>
-  </section>
+    .contact__title {
+      animation: glitch 1s linear infinite;
+      
+    }
+
+    @keyframes glitch {
+      2%,
+      64% {
+        transform: translate(2px, 0) skew(0deg);
+      }
+      4%,
+      60% {
+        transform: translate(-2px, 0) skew(0deg);
+      }
+      62% {
+        transform: translate(0, 0) skew(5deg);
+      }
+    }
+
+    div:before,
+    div:after {
+      content: attr(title);
+      position: absolute;
+      left: 0;
+    }
+
+    div:before {
+      animation: glitchTop 1s linear infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    @keyframes glitchTop {
+      2%,
+      64% {
+        transform: translate(2px, -2px);
+      }
+      4%,
+      60% {
+        transform: translate(-2px, 2px);
+      }
+      62% {
+        transform: translate(13px, -1px) skew(-13deg);
+      }
+    }
+
+    div:after {
+      animation: glitchBotom 1.5s linear infinite;
+      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+
+    @keyframes glitchBotom {
+      2%,
+      64% {
+        transform: translate(-2px, 0);
+      }
+      4%,
+      60% {
+        transform: translate(-2px, 0);
+      }
+      62% {
+        transform: translate(-22px, 5px) skew(21deg);
+      }
+    }
+    .contact__paragraph--promo {
+      color: red;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</section>
