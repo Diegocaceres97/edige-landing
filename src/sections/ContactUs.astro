@@ -2,23 +2,26 @@
   id="contact"
   aria-labelledby="form-section"
   class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white"
+  role="region"
 >
   <div class="container px-4 md:px-6">
     <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
       <div class="space-y-4">
         <img
           src="assets/teacher.svg"
-          alt='teacher"'
+          alt="Ilustración de un profesor"
           class="w-full max-w-56 block mx-auto"
         />
         <!--      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center" id="form-section" >¡Quiebra el molde!🤘🏻</h2> -->
         <div
-  title="¡Quiebra el molde! 🤘🏻"
-  class="text-3xl font-bold sm:text-4xl md:text-5xl block w-fit mx-auto contact__title"
-  id="title"
->
-  ¡Quiebra el molde! 🤘🏻
-</div>
+          title="¡Quiebra el molde! 🤘🏻"
+          class="text-3xl font-bold sm:text-4xl md:text-5xl block w-fit mx-auto contact__title"
+          id="title"
+          role="heading"
+          aria-level="2"
+        >
+          ¡Quiebra el molde! 🤘🏻
+        </div>
         <p class="text-muted-foreground md:text-xl">
           Esta es la primera plataforma en la que el inglés se enseña a tu
           manera, ¡con total libertad!
@@ -32,6 +35,7 @@
           aria-labelledby="form-section"
           method="post"
           id="contactForm"
+          role="form"
         >
           <div class="space-y-2">
             <label
@@ -47,6 +51,7 @@
               name="name"
               required
               aria-required="true"
+              aria-label="Ingresa tu nombre completo"
             />
           </div>
           <div class="space-y-2">
@@ -64,6 +69,7 @@
               placeholder="example@email.com"
               required
               aria-required="true"
+              aria-label="Ingresa tu correo electrónico"
             />
           </div>
           <div class="space-y-2">
@@ -86,12 +92,13 @@
               placeholder="123-456-7890"
               required
               aria-required="true"
+              aria-label="Ingresa tu número de teléfono"
             />
           </div>
           <button
             class="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
             type="submit"
-            aria-label="Enviar formulario"
+            aria-label="Enviar formulario de contacto"
           >
             Enviar formulario 🚀
           </button>

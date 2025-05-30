@@ -2,27 +2,29 @@
 
 ---
 
-<section id="pricing" class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white">
+<section id="pricing" class="w-full flex justify-center py-12 md:py-24 lg:py-32 text-black dark:text-white" role="region" aria-labelledby="pricing-title">
     <div class="container px-4 md:px-6">
       <div class="flex flex-col items-center justify-center space-y-4 text-center">
         <div class="space-y-2">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Precios</h2>
-          <p id="task-list" class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <h2 id="pricing-title" class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Precios</h2>
+          <p id="pricing-description" class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Tenemos los mejores precios para que puedas aprender inglés libremente.
           </p>
         </div>
-        <div class="grid w-full max-w-5xl gap-6 lg:grid-cols-3">
+        <div class="grid w-full max-w-5xl gap-6 lg:grid-cols-3" role="list" aria-label="Planes de precios disponibles">
           <div
             class="rounded-lg border text-card-foreground p-6 space-y-4 bg-background shadow-md"
             data-v0-t="card"
+            role="listitem"
+            aria-labelledby="basic-plan-title"
           >
             <div class="space-y-2">
-              <h3 class="text-2xl font-bold">Básica</h3>
-              <p class="text-4xl font-bold basic-price">
+              <h3 id="basic-plan-title" class="text-2xl font-bold">Básica</h3>
+              <p class="text-4xl font-bold basic-price" aria-label="Precio del plan básico">
                 $250.000<span class="text-2xl">/mo</span>
               </p>
             </div>
-            <ul class="space-y-2 text-muted-foreground" aria-labelledby="task-list">
+            <ul class="space-y-2 text-muted-foreground" aria-labelledby="basic-plan-features">
               <li>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +37,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -52,6 +55,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -69,6 +73,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -84,14 +89,16 @@
           <div
             class="rounded-lg border text-card-foreground p-6 space-y-4 bg-background shadow-md"
             data-v0-t="card"
+            role="listitem"
+            aria-labelledby="pro-plan-title"
           >
             <div class="space-y-2">
-              <h3 class="text-2xl font-bold">Pro</h3>
-              <p class="text-4xl font-bold pro-price">
+              <h3 id="pro-plan-title" class="text-2xl font-bold">Pro</h3>
+              <p class="text-4xl font-bold pro-price" aria-label="Precio del plan profesional">
                 $350.000<span class="text-2xl">/mo</span>
               </p>
             </div>
-            <ul class="space-y-2 text-muted-foreground" aria-labelledby="task-list">
+            <ul class="space-y-2 text-muted-foreground" aria-labelledby="pro-plan-features">
               <li>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +111,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -121,6 +129,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -138,6 +147,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -153,14 +163,16 @@
           <div
             class="rounded-lg border text-card-foreground p-6 space-y-4 bg-background shadow-md"
             data-v0-t="card"
+            role="listitem"
+            aria-labelledby="custom-plan-title"
           >
             <div class="space-y-2">
-              <h3 class="text-2xl font-bold">Personalizada</h3>
+              <h3 id="custom-plan-title" class="text-2xl font-bold">Personalizada</h3>
               <p class="text-4xl font-bold">
                 A convenir<span class="text-2xl">/mo</span>
               </p>
             </div>
-            <ul class="space-y-2 text-muted-foreground" aria-labelledby="task-list">
+            <ul class="space-y-2 text-muted-foreground" aria-labelledby="custom-plan-features">
               <li>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -173,6 +185,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -190,6 +203,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
@@ -207,6 +221,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="mr-2 inline-block h-4 w-4 text-primary"
+                  aria-hidden="true"
                 >
                   <path d="M20 6 9 17l-5-5"></path>
                 </svg>
